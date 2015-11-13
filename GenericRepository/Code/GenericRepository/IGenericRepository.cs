@@ -29,7 +29,11 @@ namespace ToB.Db.GenericRepository
 
         Entity GetSingle(Func<Entity, bool> predicate);
 
+        Entity GetSingleOrDefault(Func<Entity, bool> predicate);
+
         Entity GetFirst(Func<Entity, bool> predicate);
+
+        Entity GetFirstOrDefault(Func<Entity, bool> predicate);
 
         IEnumerable<Entity> Get(
             int? pageNo = null, 

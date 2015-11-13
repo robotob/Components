@@ -188,6 +188,16 @@ namespace ToB.Db.GenericRepository
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public Entity GetSingleOrDefault(Func<Entity, bool> predicate)
+        {
+            return this._entitySet.SingleOrDefault<Entity>(predicate);
+        }
+
+        /// <summary>
         /// The first record matching the specified criteria
         /// </summary>
         /// <param name="predicate">Criteria to match on</param>
@@ -195,6 +205,16 @@ namespace ToB.Db.GenericRepository
         public Entity GetFirst(Func<Entity, bool> predicate)
         {
             return this._entitySet.First<Entity>(predicate);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public Entity GetFirstOrDefault(Func<Entity, bool> predicate)
+        {
+            return this._entitySet.FirstOrDefault<Entity>(predicate);
         }
 
         public IEnumerable<Entity> Get(
